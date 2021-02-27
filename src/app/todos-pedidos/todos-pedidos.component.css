@@ -1,0 +1,17 @@
+.badge{
+    color: white;
+    margin-left: 2px;
+}
+
+.bg-marca{
+    background-color: #607d8b;
+}
+
+.bg-perfumaria{
+    background-color: #6a1b9a ;
+}
+
+.selecionado{
+    background-color: #616161;
+    color: white;
+}

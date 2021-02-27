@@ -1,0 +1,28 @@
+<div class="lista">
+    <span *ngFor="let pedido of pedidos">
+        <div class="card" (mouseover)="expandir(minhadiv, $event)" (mouseout)="expandir(minhadiv, $event)" #minhadiv>
+            <i id= "delete" class="bi bi-x-square"></i>
+            <div class="card-body">
+                
+                <h5>{{pedido.nome | uppercase}}</h5>
+                
+                <div id="complemento" style="display:none">
+                    <span class="badge bg-marca">{{pedido.marca | uppercase}}</span>
+                    <span class="badge"
+                    [ngClass]="{'bg-warning text-dark': pedido.tipo == 'GN',
+                                'bg-primary': pedido.tipo =='SM',
+                                'bg-perfumaria': pedido.tipo == 'PF',
+                                'bg-dark': pedido.tipo == 'ET'}">
+                                {{pedido.tipo | descCompleta | uppercase}}
+                    </span>
+
+                    <span class="badge" 
+                    [ngClass]="{'bg-danger': pedido.situacao == 'FT',
+                                'bg-info': pedido.situacao == 'EN'}">
+                                {{pedido.situacao | descCompleta | uppercase}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </span>
+</div>

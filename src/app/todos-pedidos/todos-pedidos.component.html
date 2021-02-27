@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Produto</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Situacao</th>
+      </tr>
+    </thead>
+    <tbody #selecao>
+      <tr *ngFor="let pedido of pedidos">
+        <td>{{ pedido.nome | uppercase }}</td>
+        <td>{{ pedido.marca | uppercase }}</td>
+        <td>
+            <span class="badge"
+            [ngClass]="{'bg-warning text-dark': pedido.tipo == 'GN',
+                        'bg-primary': pedido.tipo =='SM',
+                        'bg-perfumaria': pedido.tipo == 'PF',
+                        'bg-dark': pedido.tipo == 'ET'}">
+                        {{pedido.tipo | descCompleta | uppercase}}
+            </span>
+        </td>
+        <td>{{ pedido.situacao | descCompleta }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
