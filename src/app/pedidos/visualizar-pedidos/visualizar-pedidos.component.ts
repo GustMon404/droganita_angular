@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
-import {PedidosService} from '../pedidos.service';
+import {PedidosService} from '../../pedidos.service';
 
 @Component({
-  selector: 'app-pedidos',
-  templateUrl: './pedidos.component.html',
-  styleUrls: ['./pedidos.component.css']
+  selector: 'app-visualizar-pedidos',
+  templateUrl: './visualizar-pedidos.component.html',
+  styleUrls: ['./visualizar-pedidos.component.css']
 })
 export class VisualizarPedidosComponent implements OnInit {
 
