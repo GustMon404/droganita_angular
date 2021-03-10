@@ -1,1 +1,19 @@
-<p>Login</p>
+<div class="center">
+    <div class="col-6">
+        <form>
+            <div class="row mb-3">
+                <label for="cod" class="col-sm-2 col-form-label">Cod Vendedor</label>
+                <div class="col-sm-10">
+                <input type="email" class="form-control" id="cod" name="nome" [(ngModel)]="usuario.nome">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="senha" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                <input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="usuario.senha">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="fazerLogin()">Sign in</button>
+        </form>
+    </div>
+</div>

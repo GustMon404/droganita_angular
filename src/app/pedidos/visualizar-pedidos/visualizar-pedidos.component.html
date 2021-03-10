@@ -1,6 +1,6 @@
-<div class="lista">
+<div class="card block2">
     <span *ngFor="let pedido of pedidos">
-        <div class="card" (mouseover)="expandir(minhadiv, $event)" (mouseout)="expandir(minhadiv, $event)" #minhadiv>
+        <div class="card un" (mouseover)="expandir(minhadiv, $event)" (mouseout)="expandir(minhadiv, $event)" #minhadiv>
             <i id= "delete" class="bi bi-x-square"></i>
             <div class="card-body">
                 
@@ -16,10 +16,8 @@
                                 {{pedido.tipo | descCompleta | uppercase}}
                     </span>
 
-                    <span class="badge" 
-                    [ngClass]="{'bg-danger': pedido.situacao == 'FT',
-                                'bg-info': pedido.situacao == 'EN'}">
-                                {{pedido.situacao | descCompleta | uppercase}}
+                    <span class="badge bg-success" *ngIf="pedido.encomenda">
+                        ENCOMENDA
                     </span>
                 </div>
             </div>

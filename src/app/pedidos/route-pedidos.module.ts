@@ -4,8 +4,18 @@ import { FazerPedidoComponent } from './fazer-pedido/fazer-pedido.component';
 import { TodosPedidosComponent } from './todos-pedidos/todos-pedidos.component';
 
 const routes: Routes = [
-  {path:'', component: FazerPedidoComponent},
-  {path:'todos', component: TodosPedidosComponent},
+  {
+    path:'fazerPedido',
+    component: FazerPedidoComponent
+  },
+  {
+    path:'todosPedidos',
+    component: TodosPedidosComponent
+  },
+  {
+    path:'',
+    redirectTo: '/pedidos/fazerPedido',
+    pathMatch: 'full'},
 ];
 
 @NgModule({

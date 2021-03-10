@@ -8,17 +8,19 @@ export class DescCompletaPipe implements PipeTransform {
   transform(value: unknown, ...args: unknown[]): unknown {
     switch(value){
       case 'PF':
-        return 'Pefumaria'
+        return 'Pefumaria';
       case 'SM':
-        return 'Similar'
+        return 'Similar';
       case 'GN':
-        return 'Genérico'
+        return 'Genérico';
       case 'ET':
-        return 'Etico'
+        return 'Ético';
       case 'FT':
-        return 'Falta'
-      case 'EN':
-        return 'Encomenda'
+        return 'Em Falta';
+      case 'PD':
+        return 'Pedido';
+      case 'NP':
+        return 'Não Pedido'
     }
   }
 

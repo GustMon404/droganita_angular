@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { PedidosComponent } from './pedidos.component';
 import { FazerPedidoComponent } from './fazer-pedido/fazer-pedido.component';
 import { TodosPedidosComponent } from './todos-pedidos/todos-pedidos.component';
 import { VisualizarPedidosComponent } from './visualizar-pedidos/visualizar-pedidos.component';
-import { FormsModule } from '@angular/forms';
-import { DescCompletaPipe } from '../desc-completa.pipe';
+
+import { DescCompletaPipe } from './pipe/desc-completa.pipe';
 import { PedidosRoutingModule } from './route-pedidos.module';
+import { PedidosService } from './pedidos.service';
+import { EncomendaPipe } from './pipe/encomenda.pipe';
+
 
 
 
@@ -16,12 +21,14 @@ import { PedidosRoutingModule } from './route-pedidos.module';
     FazerPedidoComponent,
     TodosPedidosComponent,
     VisualizarPedidosComponent,
-    DescCompletaPipe
+    DescCompletaPipe,
+    EncomendaPipe
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    PedidosRoutingModule
-  ]
+    PedidosRoutingModule,
+    FormsModule
+  ],
+  providers: [PedidosService]
 })
 export class PedidosModule { }

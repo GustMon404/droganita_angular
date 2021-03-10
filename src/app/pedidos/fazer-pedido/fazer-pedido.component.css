@@ -1,9 +1,25 @@
-.pedido{
-    margin-top: 25%;
-    /* margin-right: 5%; */
+.block1 {
+    height: 600px;
 }
+
+.row{
+    height: auto;
+}
+
+.fazer-pedido{
+    margin-bottom: 5%;
+}
+
 
 .btn{
     margin-top: 20px;
     width: 100%;
+}
+
+
+@media (max-width: 992px) {
+    .block1{
+        height: 100%;
+        top:5%;
+    }
 }

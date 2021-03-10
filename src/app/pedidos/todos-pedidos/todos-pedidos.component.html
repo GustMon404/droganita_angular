@@ -1,9 +1,39 @@
-<table class="table">
+<div class="filtro">
+    <div class="form-row align-items-center">
+      <div class="col-sm-3 my-1">
+        <label class="sr-only" for="inlineFormInputName">Name</label>
+        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
+      </div>
+      <div class="col-auto my-1">
+        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="col-auto my-1">
+        <div class="custom-control custom-checkbox mr-sm-2">
+          <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+          <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+        </div>
+      </div>
+      <div class="col-auto my-1">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+</div>
+  <div class="card" >
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Produto</th>
         <th scope="col">Marca</th>
-        <th scope="col">Tipo</th>
+        <th scope="col">Grupo</th>
+        <th scope="col">Encomenda</th>
+        <th scope="col">Data</th>
+        <th scope="col">Vendedor</th>
         <th scope="col">Situacao</th>
       </tr>
     </thead>
@@ -20,8 +50,18 @@
                         {{pedido.tipo | descCompleta | uppercase}}
             </span>
         </td>
-        <td>{{ pedido.situacao | descCompleta }}</td>
+        <td [encomenda]>{{ pedido.encomenda | encomenda }}</td>
+        <td>{{ pedido.data }}</td>
+        <td>{{ pedido.vendedor }}</td>
+        <td><span class="badge" 
+          [ngClass]="{'bg-danger': pedido.situacao == 'FT',
+                      'bg-success': pedido.situacao == 'PD',
+                      'bg-warning': pedido.situacao == 'NP'}">
+                      {{ pedido.situacao | descCompleta }}
+          </span></td>
       </tr>
     </tbody>
   </table>
+</div>
+<br>
   

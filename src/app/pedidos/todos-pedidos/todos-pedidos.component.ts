@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 
-import { PedidosService } from '../../pedidos.service';
-
+import {PedidosService} from '../pedidos.service';
 @Component({
   selector: 'app-todos-pedidos',
   templateUrl: './todos-pedidos.component.html',

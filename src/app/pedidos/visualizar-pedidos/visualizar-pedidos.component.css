@@ -1,26 +1,18 @@
-.card{
-    margin-bottom: 5px;
-    color: black;
-    border-color: #e57373;
-    
-}
-
-.card:hover{
-    box-shadow: 0 0 1em #e57373;
-    cursor: pointer;
-}
-
-.col{
+.block2{
+    height: 600px;
+    padding: 1% 1% 0% 1%;
     width: 100%;
-}
-
-.lista{
     overflow: auto;
-    padding: 4%;
-    position: absolute;
-    top: 25%;
-    width: 100%;
-    height: 100%;
+}
+
+.un{
+    border-color: #607d8b;
+    margin-bottom: 2px;
+}
+
+.un:hover{
+    border-color:#e57373;
+    
 }
 
 p{
@@ -31,6 +23,7 @@ p{
 i{
     right: 10px;
     position: absolute;
+    cursor: pointer;
     display:none;
 }
 
@@ -45,4 +38,12 @@ i{
 
 .bg-perfumaria{
     background-color: #6a1b9a ;
+}
+
+@media (max-width: 992px) {
+    .block2{
+        height: 400px;
+        margin-bottom: 5px;
+        margin-top:5%;
+    }
 }
