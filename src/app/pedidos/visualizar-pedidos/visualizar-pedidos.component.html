@@ -1,6 +1,6 @@
 <div class="card block2">
     <span *ngFor="let pedido of pedidos">
-        <div class="card un" (mouseover)="expandir(minhadiv, $event)" (mouseout)="expandir(minhadiv, $event)" #minhadiv>
+        <div [appExpandir] class="card un">
             <i id= "delete" class="bi bi-x-square"></i>
             <div class="card-body">
                 

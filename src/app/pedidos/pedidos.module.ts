@@ -11,6 +11,7 @@ import { DescCompletaPipe } from './pipe/desc-completa.pipe';
 import { PedidosRoutingModule } from './route-pedidos.module';
 import { PedidosService } from './pedidos.service';
 import { EncomendaPipe } from './pipe/encomenda.pipe';
+import { ExpandirDirective } from './visualizar-pedidos/expandir.directive';
 
 
 
@@ -22,7 +23,8 @@ import { EncomendaPipe } from './pipe/encomenda.pipe';
     TodosPedidosComponent,
     VisualizarPedidosComponent,
     DescCompletaPipe,
-    EncomendaPipe
+    EncomendaPipe,
+    ExpandirDirective,
   ],
   imports: [
     CommonModule,

@@ -17,18 +17,4 @@ export class VisualizarPedidosComponent implements OnInit {
     this.pedidos = this.pedidoService.lista_pedidos()
   }
 
-  expandir(e, evento: MouseEvent){
-    let complemento = e.querySelector("#complemento");
-    let del = e.querySelector("#delete")
-    
-    if (evento.type == "mouseover"){
-      del.style.display = "block"
-      complemento.style.display = "block";
-    }
-    else{
-      del.style.display = "none";
-      complemento.style.display = "none";
-    }
-  }
-
 }
