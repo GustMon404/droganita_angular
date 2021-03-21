@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Pedido } from '../pedido';
 
 import {PedidosService} from '../pedidos.service';
 
@@ -9,12 +10,12 @@ import {PedidosService} from '../pedidos.service';
 })
 export class VisualizarPedidosComponent implements OnInit {
 
-  pedidos: any[] = [];
+  pedidos: Pedido[];
 
   constructor(private pedidoService: PedidosService) { }
 
   ngOnInit(): void {
-    this.pedidos = this.pedidoService.lista_pedidos()
+    this.pedidoService.lista_pedidos().subscribe(pedidos => this.pedidos = pedidos)
   }
 
 }

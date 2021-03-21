@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Pedido } from '../pedido';
 
 import {PedidosService} from '../pedidos.service';
 @Component({
@@ -10,7 +11,7 @@ export class TodosPedidosComponent implements OnInit, AfterViewInit {
 
   CODE_ELEMENT_TYPE=1;
 
-  pedidos:any = [];
+  pedidos:Pedido[];
 
   pedidoElement = null;
 
@@ -21,7 +22,7 @@ export class TodosPedidosComponent implements OnInit, AfterViewInit {
    }
 
   ngOnInit(): void {
-    this.pedidos = this.pedidosService.lista_pedidos()
+    this.pedidosService.lista_pedidos().subscribe(pedidos => this.pedidos = pedidos)
   }
 
   

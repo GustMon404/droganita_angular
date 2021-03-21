@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { PedidosComponent } from './pedidos.component';
 import { FazerPedidoComponent } from './fazer-pedido/fazer-pedido.component';
@@ -12,6 +14,7 @@ import { PedidosRoutingModule } from './route-pedidos.module';
 import { PedidosService } from './pedidos.service';
 import { EncomendaPipe } from './pipe/encomenda.pipe';
 import { ExpandirDirective } from './visualizar-pedidos/expandir.directive';
+
 
 
 
@@ -29,7 +32,8 @@ import { ExpandirDirective } from './visualizar-pedidos/expandir.directive';
   imports: [
     CommonModule,
     PedidosRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [PedidosService]
 })

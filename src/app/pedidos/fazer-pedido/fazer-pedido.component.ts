@@ -21,7 +21,6 @@ export class FazerPedidoComponent implements OnInit {
   // situacao: boolean = false;
 
   adicionar_produto(e){
-    console.log(this.produto)
     if(this.produto.nome === null){
       e.nomeProduto.className="form-control is-invalid"
     }
