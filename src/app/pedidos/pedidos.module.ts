@@ -14,6 +14,7 @@ import { PedidosRoutingModule } from './route-pedidos.module';
 import { PedidosService } from './pedidos.service';
 import { EncomendaPipe } from './pipe/encomenda.pipe';
 import { ExpandirDirective } from './visualizar-pedidos/expandir.directive';
+import { GerenciarPedidosComponent } from './gerenciar-pedidos/gerenciar-pedidos.component';
 
 
 
@@ -28,6 +29,7 @@ import { ExpandirDirective } from './visualizar-pedidos/expandir.directive';
     DescCompletaPipe,
     EncomendaPipe,
     ExpandirDirective,
+    GerenciarPedidosComponent,
   ],
   imports: [
     CommonModule,

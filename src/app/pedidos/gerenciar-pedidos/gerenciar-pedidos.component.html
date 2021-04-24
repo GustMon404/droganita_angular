@@ -1,0 +1,49 @@
+<div class="borda">
+    <div class="card">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Grupo</th>
+                    <th scope="col">Encomenda</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Vendedor</th>
+                    <th scope="col">Situacao</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody #selecao>
+                <tr *ngFor="let pedido of pedidos">
+                    <td>{{ pedido.nome | uppercase }}</td>
+                    <td>{{ pedido.marca | uppercase }}</td>
+                    <td>
+                        <span class="badge" [ngClass]="{'bg-warning text-dark': pedido.tipo == 'GN',
+                            'bg-primary': pedido.tipo =='SM',
+                            'bg-perfumaria': pedido.tipo == 'PF',
+                            'bg-dark': pedido.tipo == 'ET'}">
+                            {{pedido.tipo | descCompleta | uppercase}}
+                        </span>
+                    </td>
+                    <td [encomenda]>{{ pedido.encomenda | encomenda }}</td>
+                    <td>{{ pedido.data }}</td>
+                    <td>{{ pedido.vendedor }}</td>
+                    <td><span class="badge" [ngClass]="{'bg-danger': pedido.situacao == 'FT',
+                            'bg-success': pedido.situacao == 'PD',
+                            'bg-warning': pedido.situacao == 'AB'}">
+                            {{ pedido.situacao | descCompleta }}
+                        </span></td>
+                    <td >
+                        <span (click)="mudarSituacao(pedido, 'PD')">
+                            <i class="fas fa-dollar-sign cifrao circle" ></i>
+                        </span>
+                        <span (click)="mudarSituacao(pedido, 'FT')">
+                            <i class="fas fa-times cancel circle"></i>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+</div>

@@ -17,7 +17,7 @@ export class AuthService {
       this.estaLogado = true;
       this.mostrarMenu.emit(true)
       this.route.navigate(['/'])
-      
+      return true
     }
     else{
       this.estaLogado = false

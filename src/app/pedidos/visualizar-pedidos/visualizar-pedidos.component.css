@@ -20,12 +20,24 @@ p{
     margin-bottom: 2px;
 }
 
-i{
-    right: 10px;
+.bi.bi-trash-fill{
+    right: 5px;
     position: absolute;
     cursor: pointer;
     display:none;
 }
+
+.bi.bi-trash-fill:hover{
+    color: red;
+}
+
+/* .far.fa-trash-alt{
+    right: 5px;
+    position: absolute;
+    cursor: pointer;
+    display:none;
+    color: red;
+} */
 
 .badge{
     color: white;

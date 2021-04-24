@@ -8,8 +8,8 @@ import { LoginComponent } from '../login/login.component';
 const routes: Routes = [
   {
     path:'pedidos',
-    //canActivate: [AuthGuard],
-    //canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () => import('../pedidos/pedidos.module').then(m => m.PedidosModule)
   },
   {

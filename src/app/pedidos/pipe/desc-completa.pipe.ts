@@ -19,8 +19,8 @@ export class DescCompletaPipe implements PipeTransform {
         return 'Em Falta';
       case 'PD':
         return 'Pedido';
-      case 'NP':
-        return 'Não Pedido'
+      case 'AB':
+        return 'Aberto'
     }
   }
 

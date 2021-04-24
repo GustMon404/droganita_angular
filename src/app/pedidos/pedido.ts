@@ -1,9 +1,10 @@
 export class Pedido {
+    id?: number;
     nome: string;
     marca: string;
     tipo: string = "GN";
     encomenda: boolean= false;
-    data?: string;
+    data?: String;
     vendedor?: string;
     situacao?: string;
 }

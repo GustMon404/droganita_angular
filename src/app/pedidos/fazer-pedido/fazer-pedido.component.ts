@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Pedido } from '../pedido';
 import {PedidosService} from '../pedidos.service';
+import { VisualizarPedidosComponent } from '../visualizar-pedidos/visualizar-pedidos.component';
 @Component({
   selector: 'app-fazer-pedido',
   templateUrl: './fazer-pedido.component.html',
@@ -8,9 +9,14 @@ import {PedidosService} from '../pedidos.service';
 })
 export class FazerPedidoComponent implements OnInit {
 
-  constructor(private produtoService: PedidosService) { }
+  constructor(private pedidoService: PedidosService) { }
 
   ngOnInit(): void {
+  }
+
+  @ViewChild(VisualizarPedidosComponent) child:VisualizarPedidosComponent;
+  ataulizarLista(){
+    this.child.listaPedido()
   }
 
   produto = new Pedido()
@@ -28,7 +34,8 @@ export class FazerPedidoComponent implements OnInit {
       e.marcaProduto.className="form-control is-invalid"
     }
     else{
-      this.produtoService.adicionar_pedidos(this.produto)
+      
+      this.pedidoService.adicionar_pedidos(this.produto).subscribe(() => this.ataulizarLista())
 
       e.nomeProduto.className="form-control"
       e.marcaProduto.className="form-control"

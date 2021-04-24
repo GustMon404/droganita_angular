@@ -2,16 +2,17 @@
   <div class="filtro">
     <div class="form-row align-items-center">
       <div class="col-sm-3 my-1">
-        <label class="sr-only" for="inlineFormInputName">Name</label>
-        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
+        <label class="sr-only" for="inlineFormInputName">Nome</label>
+        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nome do Produto" [(ngModel)]="pesquisar_nome">
       </div>
       <div class="col-auto my-1">
         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Perfumaria</option>
-          <option value="1">Genérico</option>
-          <option value="2">Similar</option>
-          <option value="3">Ético</option>
+        <select id="tipoProduto" name="tipoProduto" class="form-control" [(ngModel)]="tipo">
+          <option selected value='' >Todos</option>
+          <option value="PF">Perfumaria</option>
+          <option value="SM">Similar</option>
+          <option value="GN">Genérico</option>]
+          <option value="ET">Ético</option>
         </select>
       </div>
       <div class="col-auto my-1">
@@ -21,7 +22,7 @@
         </div>
       </div>
       <div class="col-auto my-1">
-        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <button type="submit" class="btn btn-primary" (click)=pesquisar()>Filtrar</button>
       </div>
     </div>
 </div>
@@ -57,7 +58,7 @@
         <td><span class="badge" 
           [ngClass]="{'bg-danger': pedido.situacao == 'FT',
                       'bg-success': pedido.situacao == 'PD',
-                      'bg-warning': pedido.situacao == 'NP'}">
+                      'bg-warning': pedido.situacao == 'AB'}">
                       {{ pedido.situacao | descCompleta }}
           </span></td>
       </tr>

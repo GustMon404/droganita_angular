@@ -1,19 +1,23 @@
-<div class="center">
-    <div class="col-6">
-        <form>
-            <div class="row mb-3">
-                <label for="cod" class="col-sm-2 col-form-label">Cod Vendedor</label>
-                <div class="col-sm-10">
-                <input type="email" class="form-control" id="cod" name="nome" [(ngModel)]="usuario.nome">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="senha" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                <input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="usuario.senha">
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary" (click)="fazerLogin()">Sign in</button>
-        </form>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <!-- <div class="fadeIn first">
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      </div> -->
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)]="usuario.nome">
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" [(ngModel)]="usuario.senha">
+        <input type="submit" class="fadeIn fourth" value="Log In" (click)="fazerLogin()">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
     </div>
-</div>
+  </div>

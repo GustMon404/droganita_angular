@@ -1,7 +1,9 @@
 <div class="card block2">
-    <span *ngFor="let pedido of pedidos">
+    <span *ngFor="let pedido of pedidos$ | async">
         <div [appExpandir] class="card un">
-            <i id= "delete" class="bi bi-x-square"></i>
+            <!-- <i id= "delete" class="bi bi-x-square"></i> -->
+            <!-- <i id= "delete" class="far fa-trash-alt"></i> -->
+            <i id='delete' class="bi bi-trash-fill" (click)="deletar(pedido)"></i>
             <div class="card-body">
                 
                 <h5>{{pedido.nome | uppercase}}</h5>
