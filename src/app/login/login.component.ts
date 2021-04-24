@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   usuario: Funcionario = new Funcionario()
 
   fazerLogin(){
-    this.authService.Login(this.usuario)
+    this.authService.login(this.usuario).subscribe()
   }
 
 }
