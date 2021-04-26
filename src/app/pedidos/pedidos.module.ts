@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { PedidosComponent } from './pedidos.component';
@@ -15,6 +15,7 @@ import { PedidosService } from './pedidos.service';
 import { EncomendaPipe } from './pipe/encomenda.pipe';
 import { ExpandirDirective } from './visualizar-pedidos/expandir.directive';
 import { GerenciarPedidosComponent } from './gerenciar-pedidos/gerenciar-pedidos.component';
+import { AuthInterceptorService } from '../auth-interceptor.service';
 
 
 
@@ -36,7 +37,13 @@ import { GerenciarPedidosComponent } from './gerenciar-pedidos/gerenciar-pedidos
     PedidosRoutingModule,
     FormsModule,
     HttpClientModule,
+    
   ],
-  providers: [PedidosService]
+  providers: [PedidosService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    }]
 })
 export class PedidosModule { }

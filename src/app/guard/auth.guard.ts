@@ -15,10 +15,13 @@ export class AuthGuard implements CanActivate, CanLoad {
 
   verificarLogin(){
 
-    if(this.authService.verificarLogin()){
-      return true
+    if(this.authService.isLoggedIn()){
+      // this.authService.refreshToken();
+
+      return true;
     }
 
+    this.authService.logout();
     this.route.navigate(['login'])
     return false
 

@@ -9,7 +9,8 @@ import { RouteRoutingModule } from './route/route-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guard/auth.guard';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     RouteRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, 
+  //   {
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass: AuthInterceptorService,
+  //   multi: true,
+  // }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
