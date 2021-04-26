@@ -62,7 +62,7 @@ export class AuthService {
   }
 
   refreshToken(){
-    if(moment().isBetween(this.getExpiracao(), this.getExpiracao())){
+    if(moment().isBetween(this.getExpiracao().subtract(1,'days'), this.getExpiracao())){
       return this.http.post(
         this.API.concat('api/login/refresh/'), { token:this.token }
         ).pipe(tap(response => this.setSession(response)), shareReplay()).subscribe();

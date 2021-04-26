@@ -9,8 +9,7 @@ import { RouteRoutingModule } from './route/route-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guard/auth.guard';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptorService } from './auth-interceptor.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
